@@ -16,15 +16,18 @@ Below are the wireframes for this app. While most of the elements are self-expla
 
 Desktop:
 
-![imageAlt](https://imgur.com/ereBpfE)
-![imageAlt](https://imgur.com/enlsyrm)
-![imageAlt](https://imgur.com/fagJLz2)
+![imageAlt](https://i.imgur.com/ereBpfE.png)
+![imageAlt](https://i.imgur.com/enlsyrm.png)
+![imageAlt](https://i.imgur.com/fagJLz2.png)
+
 
 Mobile:
 
-![imageAlt](https://imgur.com/4Oe5C6e)
-![imageAlt](https://imgur.com/5eyYR9i)
-![imageAlt](https://imgur.com/LApXr9O)
+
+![imageAlt](https://i.imgur.com/4Oe5C6e.png)
+![imageAlt](https://i.imgur.com/5eyYR9i.png)
+![imageAlt](https://i.imgur.com/LApXr9O.png)
+
 
 <!-- https://wireframe.cc/BkecE8
 https://wireframe.cc/7yfW7p
