@@ -24,9 +24,9 @@ Desktop:
 Mobile:
 
 
-![imageAlt](https://i.imgur.com/4Oe5C6e.png)
-![imageAlt](https://i.imgur.com/5eyYR9i.png)
-![imageAlt](https://i.imgur.com/LApXr9O.png)
+![imageAlt](https://i.imgur.com/4Oe5C6e.png?1)
+![imageAlt](https://i.imgur.com/5eyYR9i.png?1)
+![imageAlt](https://i.imgur.com/LApXr9O.png?1)
 
 
 <!-- https://wireframe.cc/BkecE8
