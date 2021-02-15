@@ -42,7 +42,7 @@ https://wireframe.cc/7z7H7E -->
 ## Component Hierarchy
 The structure of this component hierarchy focuses on a clear flow of data that keeps the main App file cleanly organized and compartmentalizing GET & POST calls into separate components.
 
-![imageAlt](https://imgur.com/E8P8Oic)
+![imageAlt](https://i.imgur.com/E8P8Oic.png?1)
 
 ## API and Data Sample
 
