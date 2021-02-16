@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+import { baseURL, config } from './services';
+import Nav from './components/Nav';
+import Home from './components/Home';
 import './App.css';
+import Character from './components/Character';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
+
+  useEffect(() => {
+    const getChars = async () => {
+      const resp = await axios.get(baseURL, config);
+      setCharacters(resp.data.records);
+    };
+    getChars();
+  }, [toggleFetch]);
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <h1>Videogame Characters Around The World</h1>
+
+      <Route exact path="/">
+        <Home characters={characters} setToggleFetch={setToggleFetch} />
+      </Route>
+      <Route path="/character/:id">
+        <Character characters={characters} setToggleFetch={setToggleFetch}/>
+      </Route>
+      <Route path="/new">
+        
+      </Route>
+
+
+
     </div>
+
+    
   );
 }
 
