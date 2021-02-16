@@ -3,8 +3,11 @@
 }
 
 img {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 50%;
+  display: in-line grid;
+  width: 20%;
+  height: 20%;
+}
+
+.charDetails {
+  display: inline-grid;
 }
