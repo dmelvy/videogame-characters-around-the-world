@@ -16,37 +16,25 @@ Below are the wireframes for this app. While most of the elements are self-expla
 
 Desktop:
 
-![imageAlt](https://i.imgur.com/ereBpfE.png)
-![imageAlt](https://i.imgur.com/enlsyrm.png)
-![imageAlt](https://i.imgur.com/fagJLz2.png)
+![imageAlt](https://i.imgur.com/AP3eOpC.png)
+![imageAlt](https://i.imgur.com/Y3ITta6.png)
+![imageAlt](https://i.imgur.com/D1vL7K9.png)
 
 
 Mobile:
 
 
-![imageAlt](https://i.imgur.com/4Oe5C6e.png?1)
-![imageAlt](https://i.imgur.com/5eyYR9i.png?1)
-![imageAlt](https://i.imgur.com/LApXr9O.png?1)
-
-
-<!-- https://wireframe.cc/BkecE8
-https://wireframe.cc/7yfW7p
-https://wireframe.cc/85Huu8
-
-Mobile:
-https://wireframe.cc/akFnDW
-https://wireframe.cc/cPIesw
-https://wireframe.cc/7z7H7E -->
+![imageAlt](https://i.imgur.com/IbnZmwp.png?1)
+![imageAlt](https://i.imgur.com/9uwtvMN.png?1)
+![imageAlt](https://i.imgur.com/P2wAhow.png?1)
 
 
 ## Component Hierarchy
 The structure of this component hierarchy focuses on a clear flow of data that keeps the main App file cleanly organized and compartmentalizing GET & POST calls into separate components.
 
-![imageAlt](https://i.imgur.com/E8P8Oic.png?1)
+![imageAlt](https://i.imgur.com/gAYJ7CE.png?1)
 
 ## API and Data Sample
-
-https://airtable.com/invite/l?inviteId=invW5sJYY8MONEcvx&inviteToken=d7c5580f0def72cb5e7b7373be7839bded320d6ca2376e0daa3cd4c022262cca
 
 Airtable will be handling all GET and POST requests for this app. Below is an example request.
 
@@ -56,45 +44,39 @@ Airtable will be handling all GET and POST requests for this app. Below is an ex
         {
             "id": "recaC5isqs0IjWgee",
             "fields": {
-                "Character name": "Mario",
-                "Videogame": "Super Mario 64",
-                "Character Image": "https://tinyurl.com/6d3k8q1c",
-                "Videogame Image": "https://tinyurl.com/na2qmebz",
-                "Character's Origin (Country)": "Brooklyn, New York",
-                "Female Protagonist?": "No",
-                "POC Protagonist?": "No",
-                "LGBTQA Protagonist?": "No",
-                "Genre": "Jump N' Run"
+                "charName": "Mario",
+                "origin": "Brooklyn, New York",
+                "gameImage": "https://tinyurl.com/na2qmebz",
+                "game": "Super Mario 64",
+                "charImage": "https://tinyurl.com/6d3k8q1c",
+                "genre": "Jump N' Run"
             },
             "createdTime": "2021-02-15T16:08:12.000Z"
         },
         {
             "id": "recQF8XuuxZSEeEda",
             "fields": {
-                "Videogame": "Assassin's Creed Odyssey",
-                "Character name": "Kassandra",
-                "Female Protagonist?": "Yes",
-                "POC Protagonist?": "No",
-                "LGBTQA Protagonist?": "Yes",
-                "Character's Origin (Country)": "Sparta, Greece",
-                "Character Image": "https://tinyurl.com/x9uvo0sa",
-                "Videogame Image": "https://tinyurl.com/1arlbcdx",
-                "Genre": "Action Adventure"
+                "charName": "Kassandra",
+                "origin": "Sparta, Greece",
+                "gameImage": "https://tinyurl.com/1arlbcdx",
+                "game": "Assassin's Creed Odyssey",
+                "lgbtqaLead": true,
+                "charImage": "https://tinyurl.com/x9uvo0sa",
+                "femaleLead": true,
+                "genre": "Action Adventure"
             },
             "createdTime": "2021-02-15T16:08:12.000Z"
         },
         {
             "id": "rec5lKuh0JkbU0r2w",
             "fields": {
-                "Videogame": "Assassin's Creed Origins",
-                "Character name": "Bayek",
-                "Genre": "Action Adventure",
-                "Character's Origin (Country)": "Siwa, Egypt",
-                "POC Protagonist?": "Yes",
-                "Female Protagonist?": "No",
-                "LGBTQA Protagonist?": "No",
-                "Character Image": "https://tinyurl.com/4psvxlt2",
-                "Videogame Image": "https://tinyurl.com/1qmdhppc"
+                "pocLead": true,
+                "charName": "Bayek",
+                "origin": "Siwa, Egypt",
+                "gameImage": "https://tinyurl.com/1qmdhppc",
+                "game": "Assassin's Creed Origins",
+                "charImage": "https://tinyurl.com/4psvxlt2",
+                "genre": "Action Adventure"
             },
             "createdTime": "2021-02-15T16:08:12.000Z"
         }
@@ -136,14 +118,23 @@ Here is a rough estimation of the development timeline:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Create Airtable data | H | 3hrs| hrs | hrs |
-| Building components with filter-able API data (GET request) | H | 7hrs| hrs | hrs |
-| Building form to create API data (POST request) | H | 3.5hrs| hrs | hrs |
-| Adding editable functionality (PUT request) | H | 3.5hrs| hrs | hrs |
-| Basic CSS, responsive design, navigation | H | 6hrs| hrs | hrs |
-| (POST MVP) Map API to pinpoint characters on map | H | 4hrs| hrs | hrs |
-| (POST MVP) User-friendly error states | H | 6hrs| hrs | hrs |
-| (POST MVP) Advanced CSS styling | H | 7hrs| hrs | hrs |
-| Total | H | 40hrs| hrs | hrs |
+| Building app components & structure | H | 1hr| hrs | hrs |
+| Developing code for API GET request | H | 1hr| hrs | hrs |
+| Building search filter form & functionality | H | 2.5hrs| hrs | hrs |
+| Rendering filtered data in results section | H | 2hrs| hrs | hrs |
+| Styling the container for rendered data | H | 2.5hrs| hrs | hrs |
+| Developing code for API POST request | H | 2hrs| hrs | hrs |
+| Building form for users to create new data | H | 1.5hrs| hrs | hrs |
+| Developing code for API PUT request | H | 2hrs| hrs | hrs |
+| Building editable form with submit button | H | 2hrs| hrs | hrs |
+| Creating responsive design for mobile | H | 3hrs| hrs | hrs |
+| Creating navigation elements (CTAs and sticky navbar) | H | 2hrs| hrs | hrs |
+| Import fonts, add colors and borders, touch up spacing | H | 2.5hrs| hrs | hrs |
+| (POST MVP) Implement Map API code | H | 2hrs| hrs | hrs |
+| (POST MVP) Pinpoint character geolocations | H | 2.5hrs| hrs | hrs |
+| (POST MVP) User-friendly error states for no search results | H | 2.5hrs| hrs | hrs |
+| (POST MVP) Updates or edits to CSS | H | 3hrs| hrs | hrs |
+| Total | H | 37hrs| hrs | hrs |
 
 ## SWOT Analysis
 
