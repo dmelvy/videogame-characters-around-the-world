@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 import { baseURL, config } from '../services';
-// import Character from './components/Character';
+import Search from './Search';
 
 function Home(props) {
   
@@ -12,7 +12,14 @@ function Home(props) {
       {props.characters.map((character) => (
         <Link key={character.id} to={`/character/${character.id}`}><img src={character.fields.charImage}/></Link>
       ))}
-  </div>
+      <div className="search-filter">
+        <Search />
+      </div>
+      
+
+    </div>
+    
+    
 )
 
 }
