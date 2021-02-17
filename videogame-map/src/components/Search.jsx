@@ -11,7 +11,7 @@ function Search(props) {
 
   useEffect(() => {
     const getChars = async () => {
-      const resp = await axios.get(baseURL, config);
+      const resp = await axios.get(`${baseURL}/${currentSearch}/`);
       setCharInfo(resp.data.records);
     };
     getChars();

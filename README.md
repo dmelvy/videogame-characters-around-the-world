@@ -125,11 +125,11 @@ Here is a rough estimation of the development timeline:
 | Styling the container for rendered data | H | 2.5hrs| hrs | hrs |
 | Developing code for API POST request | H | 2hrs| hrs | hrs |
 | Building form for users to create new data | H | 1.5hrs| hrs | hrs |
-| Developing code for API PUT request | H | 2hrs| hrs | hrs |
-| Building editable form with submit button | H | 2hrs| hrs | hrs |
 | Creating responsive design for mobile | H | 3hrs| hrs | hrs |
 | Creating navigation elements (CTAs and sticky navbar) | H | 2hrs| hrs | hrs |
 | Import fonts, add colors and borders, touch up spacing | H | 2.5hrs| hrs | hrs |
+| Developing code for API PUT request | H | 2hrs| hrs | hrs |
+| Building editable form with submit button | H | 2hrs| hrs | hrs |
 | (POST MVP) Implement Map API code | H | 2hrs| hrs | hrs |
 | (POST MVP) Pinpoint character geolocations | H | 2.5hrs| hrs | hrs |
 | (POST MVP) User-friendly error states for no search results | H | 2.5hrs| hrs | hrs |
