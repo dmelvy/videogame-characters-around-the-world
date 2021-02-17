@@ -23,11 +23,12 @@ img {
 
 .search-filter {
   position: absolute;
-  margin: 10% 65%;
+  margin: 5% 65%;
 
 }
 
 form {
+position: fixed;
 background-color: #fca311;
 color: white;
 display: grid;

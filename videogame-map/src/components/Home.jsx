@@ -15,6 +15,11 @@ function Home(props) {
       <div className="search-filter">
         <Search />
       </div>
+
+      <div className="search-result">
+        
+      </div>
+
       
 
     </div>
