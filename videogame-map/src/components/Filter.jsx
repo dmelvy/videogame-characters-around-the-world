@@ -1,4 +1,4 @@
-import Character from "./Character.jsx"
+import Result from "./Result"
 
 function Filter(props) {
   const { characters } = props
@@ -12,21 +12,21 @@ function Filter(props) {
       <h2>Videogames with POC Protagonists</h2>
         <div className="pocLeads">
         {pocLeads.map((poc) => {
-          return <Character poc={poc} />})}
+          return <Result poc={poc} />})}
 {/* here's where I render the div results and map through each array item that is true for the different leads and return the entire object property */}
          
         </div>
       <h2>Videogames with Female Protagonists</h2>
         <div className="femLeads">
           {femLeads.map((fem) => {
-            return <Character fem={fem} />
+            return <Result fem={fem} />
           })}
         </div>
 
       <h2>Videogames with Queer Protagonists</h2>
         <div className="queerLeads">
           {lgbtqaLeads.map((lgbtqa) => {
-            return <Character lgbtqa={lgbtqa} />
+            return <Result lgbtqa={lgbtqa} />
           })}
         </div>
     </section>

@@ -6,7 +6,8 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import './App.css';
 import Character from './components/Character';
-import Filter from './components/Filter';
+import Form from './components/Form';
+import Search from './components/Search';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -28,13 +29,13 @@ function App() {
 
       <Route exact path="/">
         <Home characters={characters} setToggleFetch={setToggleFetch} />
-        <Filter characters={characters}/>
+        <Search characters={characters} setToggleFetch={setToggleFetch} setCharacters={setCharacters} />
       </Route>
       <Route path="/character/:id">
         <Character characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
-      <Route path="/new">
-        
+      <Route path="/new"> 
+        <Form characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
 
 

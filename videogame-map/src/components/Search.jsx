@@ -2,17 +2,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { baseURL, config } from '../services';
 import Home from './Home';
-import Character from './Character';
+import Result from './Result';
 
 function Search(props) {
-  const [charInfo, setCharInfo] = useState("");
+  const [charInfo, setCharInfo] = useState('');
+  const [charAll, setCharAll] = useState('');
   const [currentSearch, setCurrentSearch] = useState('');
   const [newSearch, setNewSearch] = useState('');
 
   useEffect(() => {
     const getChars = async () => {
-      const resp = await axios.get(`${baseURL}/${currentSearch}/`);
-      setCharInfo(resp.data.records);
+      const resp = await axios.get(baseURL, config);
+      setCharAll(resp.data.records);
     };
     getChars();
   }, [currentSearch]);
@@ -20,8 +21,14 @@ function Search(props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     setCurrentSearch(newSearch);
+    const results = charAll.filter(char => char.fields.charName.includes(newSearch))
+    setCharInfo(results);
+    // console.log(currentSearch)
     setNewSearch('');
+    
   }
+
+  
 
   return (
     <div className="search-filter">
@@ -46,9 +53,14 @@ function Search(props) {
         <button type="submit">Find Characters</button>
       </form>
 
-        <h2>
-            {charInfo.charName ? <Character charInfo={charInfo} /> : null}
-        </h2>
+        <div>
+          
+        {charInfo.length ?
+          
+          <Home characters={charInfo} /> : null}
+          
+          
+        </div>
     </div>
   )
 }
