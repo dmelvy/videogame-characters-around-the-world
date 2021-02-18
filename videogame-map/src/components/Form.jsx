@@ -108,7 +108,7 @@ function Form(props) {
           value={lgbtqaLead}
           onClick={(e) => setLgbtqaLead(e.target.checked)}
         />
-        <button type="submit">I'm Alive!</button>
+        <button type="submit">It's Aliiiive!</button>
       </form>
     </div>
   );

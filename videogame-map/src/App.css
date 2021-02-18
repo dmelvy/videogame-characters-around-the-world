@@ -1,11 +1,12 @@
 @media only screen and (min-width: 768px) {
 body {
+  height: 100vh;
+  position: relative;
   text-align: center;
   background-image: url('https://www.freevector.com/uploads/vector/preview/1857/FreeVector-World-Map-Background.jpg');
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Rajdhani', sans-serif;
-
+  font-family: 'Major Mono Display', monospace;
 }
 
 nav {
@@ -19,7 +20,6 @@ nav {
 }
 
 a {
-  font-family: 'Major Mono Display', monospace;
   text-decoration: none;
   color: white;
 }
@@ -30,6 +30,10 @@ a {
   margin: 0 200px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* the next few lines help keep the footer stuck on the bottom */
+  min-height: 100vh; 
+  display: block;
+  padding-bottom: 100px;
 }
 
 img {
@@ -44,22 +48,35 @@ img {
 .search-filter {
 border: 5px solid black;
 position: fixed;
-top: 30%;
+top: 20%;
 z-index: 100;
 background-color: #fca311;
 color: white;
 display: flex;
 flex-direction: column;
-width: 300px;
+width: 380px;
 padding: 0 20px 20px 20px;
 }
 
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+}
+
+#hfilter {
+  font-size: 18px;
+}
+
 button {
+  font-family: 'Major Mono Display', monospace;
   width: inherit;
   height: 40px;
 }
 
 .post-edit {
+  border: 5px solid black;
   background-color: peachpuff;
   width: 300px;
   margin: 0 auto;
@@ -122,7 +139,7 @@ label {
   }
 
   .header {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   #hfilter {
