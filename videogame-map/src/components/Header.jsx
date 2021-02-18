@@ -1,4 +1,4 @@
-function Header(props) {
+function Header() {
   return (
     <div className="header">
       <h1>Videogame Characters Around The World</h1>

@@ -41,17 +41,17 @@ function Search(props) {
         <input
           type="checkbox"
           value={newSearch}
-          onChange={(event) => setNewSearch(event.target.value)}></input>
+          onChange={(event) => setNewSearch(event.target.checked)}></input>
         <label htmlFor="pocLead">Person of Color (POC) Protagonist</label>
         <input
           type="checkbox"
           value={newSearch}
-          onChange={(event) => setNewSearch(event.target.value)}></input>
+          onChange={(event) => setNewSearch(event.target.checked)}></input>
         <label htmlFor="femaleLead">Female Protagonist</label>
         <input
           type="checkbox"
           value={newSearch}
-          onChange={(event) => setNewSearch(event.target.value)}></input>
+          onChange={(event) => setNewSearch(event.target.checked)}></input>
 
         <button type="submit">Find Characters</button>
       </form>
