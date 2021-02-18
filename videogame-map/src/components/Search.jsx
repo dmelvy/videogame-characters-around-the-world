@@ -2,34 +2,24 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { baseURL, config } from '../services';
 import Home from './Home';
-import Result from './Result';
+import { Link } from 'react-router-dom';
 
 function Search(props) {
   const [charInfo, setCharInfo] = useState('');
-  const [charAll, setCharAll] = useState('');
   const [currentSearch, setCurrentSearch] = useState('');
   const [newSearch, setNewSearch] = useState('');
-
-  useEffect(() => {
-    const getChars = async () => {
-      const resp = await axios.get(baseURL, config);
-      setCharAll(resp.data.records);
-    };
-    getChars();
-  }, [currentSearch]);
-
+  
   const handleSubmit = (event) => {
     event.preventDefault()
     setCurrentSearch(newSearch);
-    const results = charAll.filter(char => char.fields.charName.includes(newSearch))
+    const results = props.characters.filter(char => {
+      return char.fields.charName.includes(newSearch)
+    })
     setCharInfo(results);
-    // console.log(currentSearch)
     setNewSearch('');
-    
+    props.setToggleFetch((curr) => !curr);
   }
-
   
-
   return (
     <div className="search-filter">
       <form onSubmit ={handleSubmit}>
@@ -52,15 +42,22 @@ function Search(props) {
 
         <button type="submit">Find Characters</button>
       </form>
-
-        <div>
-          
+      <div>
+      
         {charInfo.length ?
-          
-          <Home characters={charInfo} /> : null}
-          
-          
-        </div>
+          <div className="characters-container">
+            {charInfo.map((character) => (
+              <Link key={character.id} to={`/character/${character.id}`}><img src={character.fields.charImage} /></Link>
+            ))}
+          </div>
+          :
+          <div className="characters-container">
+            {props.characters.map((character) => (
+              <Link key={character.id} to={`/character/${character.id}`}><img src={character.fields.charImage} /></Link>
+            ))}
+          </div>
+        }
+      </div>
     </div>
   )
 }

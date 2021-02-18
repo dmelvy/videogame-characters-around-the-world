@@ -26,23 +26,20 @@ function App() {
     <div className="App">
       <Nav />
       <h1>Videogame Characters Around The World</h1>
-
       <Route exact path="/">
-        <Home characters={characters} setToggleFetch={setToggleFetch} />
         <Search characters={characters} setToggleFetch={setToggleFetch} setCharacters={setCharacters} />
+        <Home characters={characters} setToggleFetch={setToggleFetch} />
       </Route>
+
       <Route path="/character/:id">
         <Character characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
+
       <Route path="/new"> 
         <Form characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
-
-
-
     </div>
-
-    
+  
   );
 }
 

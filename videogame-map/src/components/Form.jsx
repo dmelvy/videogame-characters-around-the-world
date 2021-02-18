@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { baseURL, config } from '../services';
+import { useHistory } from 'react-router-dom';
 
 function Form(props) {
   const [charName, setCharName] = useState('');
@@ -12,12 +13,13 @@ function Form(props) {
   const [femaleLead, setFemaleLead] = useState(false);
   const [pocLead, setPocLead] = useState(false);
   const [lgbtqaLead, setLgbtqaLead] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     // prevent the default event
     e.preventDefault();
     // compile the states in an object (newPlant)
-    const newCharacter = {
+    const fields = {
       charName,
       game,
       genre,
@@ -29,29 +31,34 @@ function Form(props) {
       lgbtqaLead
     };
     // make a post request to our url, with the request body being our new object
-    await axios.post(baseURL, config, newCharacter);
+    await axios.post(baseURL, { fields }, config);
     // flip the toggle value to fire the useEffect
     props.setToggleFetch((curr) => !curr);
+    history.push('/');
     // current toggle fetch of that state
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-      <label>Character Name:</label>
+        <label>Character Name:</label>
           <input value={charName} onChange={(e) => setCharName(e.target.value)} />
-          <label>Game:
-          </label>
-        <input value={game} onChange={(e) => setGame(e.target.value)} />
-        <label>Origin:
-          </label>
-        <input type="number" value={origin} onChange={(e) => setOrigin(e.target.value)} />
-        
+        <label>Origin:</label>
+          <input value={origin} onChange={(e) => setOrigin(e.target.value)} />
+        <label>Character Picture:</label>
+          <input type="url" value={charImage} onChange={(e) => setCharImage(e.target.value)} />
+        <label>Game:</label>
+          <input value={game} onChange={(e) => setGame(e.target.value)} />
+        <label>Videogame Picture:</label>
+          <input type="url" value={gameImage} onChange={(e) => setGameImage(e.target.value)} />
+        <label>POC Protagonist?</label>
+          <input type="checkbox" value={pocLead} onChange={(e) => setPocLead(e.target.value)} />
+        <label>Female Protagonist?</label>
+          <input type="checkbox" value={femaleLead} onChange={(e) => setFemaleLead(e.target.value)} />
+        <label>LGBTQA Protagonist?</label>
+         <input type="checkbox" value={lgbtqaLead} onChange={(e) => setLgbtqaLead(e.target.value)} />
           <button type="submit">I'm Alive!</button>
-
-
       </form>
-
     </div>
   )
 }
