@@ -66,7 +66,7 @@ function Search(props) {
     <div>
       {/* Search filter form begins here! */}
       <form className="search-filter" onSubmit={handleSubmit}>
-        <h3>Filter by character or game</h3>
+        <h3 id="hfilter">Filter by character or game</h3>
         <label htmlFor="character-keyword">Character Name</label>
         <input
           type="text"
