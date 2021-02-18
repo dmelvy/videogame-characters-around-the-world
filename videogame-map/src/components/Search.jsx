@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Search(props) {
@@ -6,6 +6,9 @@ function Search(props) {
   const [currentSearch, setCurrentSearch] = useState('');
   const [newSearch, setNewSearch] = useState('');
   const [gameSearch, setGameSearch] = useState('');
+  const [lgbtqaSearch, setLgbtqaSearch] = useState(false);
+  const [femaleSearch, setFemaleSearch] = useState(false);
+  const [pocSearch, setPocSearch] = useState(false);
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -17,6 +20,27 @@ function Search(props) {
     setNewSearch('');
     props.setToggleFetch((curr) => !curr);
   }
+
+  useEffect(() => {
+    if (lgbtqaSearch === true) {
+      let results1 = props.characters.filter(char => { 
+        return char.fields.lgbtqaLead.includes(lgbtqaSearch)
+      })
+      setLgbtqaSearch(results1)
+    } else if (femaleSearch === true) {
+       let results2 = props.characters.filter(char => { 
+        return char.fields.pocLead.includes(femaleSearch)
+      })
+      setFemaleSearch(results2)
+    } else if (pocSearch === true) {
+      let results3 = props.characters.filter(char => { 
+        return char.fields.femaleLead.includes(pocSearch)
+      })
+      setPocSearch(results3)
+    } 
+
+  }, [lgbtqaSearch, femaleSearch, pocSearch])
+
   
   return (
     <div>
@@ -40,18 +64,18 @@ function Search(props) {
         <label htmlFor="queerLead">LGBTQA Protagonist</label>
         <input
           type="checkbox"
-          value={newSearch}
-          onChange={(event) => setNewSearch(event.target.checked)}></input>
+          value={lgbtqaSearch}
+          onChange={(event) => setLgbtqaSearch(event.target.checked)}></input>
         <label htmlFor="pocLead">Person of Color (POC) Protagonist</label>
         <input
           type="checkbox"
-          value={newSearch}
-          onChange={(event) => setNewSearch(event.target.checked)}></input>
+          value={pocSearch}
+          onChange={(event) => setPocSearch(event.target.checked)}></input>
         <label htmlFor="femaleLead">Female Protagonist</label>
         <input
           type="checkbox"
-          value={newSearch}
-          onChange={(event) => setNewSearch(event.target.checked)}></input>
+          value={femaleSearch}
+          onChange={(event) => setFemaleSearch(event.target.checked)}></input>
 
         <button type="submit">Find Characters</button>
       </form>
