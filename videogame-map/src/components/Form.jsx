@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function Form(props) {
   const [charName, setCharName] = useState("");
@@ -14,6 +14,26 @@ function Form(props) {
   const [pocLead, setPocLead] = useState(false);
   const [lgbtqaLead, setLgbtqaLead] = useState(false);
   const history = useHistory();
+  const params = useParams();
+
+  useEffect(() => {
+    // if we have characters and an id
+    if (props.characters.length > 0 && params.id) {
+      // find the character with an id of params.id
+      const foundChar = props.characters.find((char) => params.id === char.id);
+      if (foundChar) {
+        setCharName(foundChar.fields.charName)
+        setOrigin(foundChar.fields.origin)
+        setCharImage(foundChar.fields.charImage)
+        setGameImage(foundChar.fields.gameImage)
+        setPocLead(foundChar.fields.pocLead)
+        setLgbtqaLead(foundChar.fields.lgbtqaLead)
+        setFemaleLead(foundChar.fields.femaleLead)
+        setGenre(foundChar.fields.genre)
+        setGame(foundChar.fields.game)
+      }
+    }
+  }, [props.characters, params.id]);
 
   const handleSubmit = async (e) => {
     // prevent the default event
@@ -30,9 +50,14 @@ function Form(props) {
       femaleLead,
       lgbtqaLead,
     };
-    // make a post request to our url, with the request body being our new object
-    await axios.post(baseURL, { fields }, config);
-    // flip the toggle value to fire the useEffect
+
+    if (params.id) {
+      const charURL = `${baseURL}/${params.id}`;
+      await axios.put(charURL, { fields }, config);
+    } else {
+      // make a post request to our url, with the request body being our new object
+      await axios.post(baseURL, { fields }, config);
+    }// flip the toggle value to fire the useEffect
     props.setToggleFetch((curr) => !curr);
     history.push("/");
     // current toggle fetch of that state

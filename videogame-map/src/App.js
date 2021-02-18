@@ -32,7 +32,7 @@ function App() {
       </Route>
 
       <Route path="/character/:id">
-        <Character characters={characters} setToggleFetch={setToggleFetch}/>
+        <Form characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
 
       <Route path="/new"> 

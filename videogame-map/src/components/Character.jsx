@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Character(props) {
   const params = useParams(0);
@@ -19,6 +20,7 @@ function Character(props) {
       <h3>{charType.fields.pocLead ? "POC Protagonist" : null}</h3>
       <h3>{charType.fields.femaleLead ? "Female Protagonist" : null}</h3>
       <h3>{charType.fields.lgbtqaLead ? "Queer Protagonist" : null}</h3>
+      <Link to={`/character/${charType.id}`}><button>Edit!</button></Link>
     </div>
   )
 }
