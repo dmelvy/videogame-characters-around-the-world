@@ -81,24 +81,30 @@ function Search(props) {
           value={gameSearch}
           onChange={(event) => setGameSearch(event.target.value)}
         ></input>
-        <label htmlFor="queerLead">LGBTQA Protagonist</label>
-        <input
+        <div className="check">
+          <input
           type="checkbox"
           value={lgbtqaSearch}
+          className="check"
           onChange={(event) => setLgbtqaSearch(event.target.checked)}
-        />
-        <label htmlFor="pocLead">POC Protagonist</label>
-        <input
-          type="checkbox"
-          value={pocSearch}
-          onChange={(event) => setPocSearch(event.target.checked)}
-        />
-        <label htmlFor="femaleLead">Female Protagonist</label>
-        <input
-          type="checkbox"
-          value={femaleSearch}
-          onChange={(event) => setFemaleSearch(event.target.checked)}
-        />
+          />
+          <label htmlFor="queerLead">LGBTQA <span>Protagonist</span>
+          </label>
+          <input
+            type="checkbox"
+            className="check"
+            value={pocSearch}
+            onChange={(event) => setPocSearch(event.target.checked)}
+          />
+          <label htmlFor="pocLead">POC <span>Protagonist</span></label>
+            <input
+            type="checkbox"
+            className="check"
+            value={femaleSearch}
+            onChange={(event) => setFemaleSearch(event.target.checked)}
+          />
+          <label htmlFor="femaleLead">Female <span>Protagonist</span></label>
+        </div>
         <button type="submit">Find Characters</button>
       </form>
       {/* character rendering starts here in a ternary that either shows filtered results or all results */}

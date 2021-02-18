@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
-import { baseURL, config } from './services';
-import Nav from './components/Nav';
-import './App.css';
-import Character from './components/Character';
-import Form from './components/Form';
-import Search from './components/Search';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Route, Link } from "react-router-dom";
+import { baseURL, config } from "./services";
+import Nav from "./components/Nav";
+import "./App.css";
+import Character from "./components/Character";
+import Form from "./components/Form";
+import Search from "./components/Search";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -23,28 +23,30 @@ function App() {
   }, [toggleFetch]);
 
   return (
-    
     <div className="App">
       <Nav />
       <Header />
       <Route exact path="/">
-        <Search characters={characters} setToggleFetch={setToggleFetch} setCharacters={setCharacters} />
+        <Search
+          characters={characters}
+          setToggleFetch={setToggleFetch}
+          setCharacters={setCharacters}
+        />
       </Route>
 
       <Route path="/character/:id">
-        <Character characters={characters} setToggleFetch={setToggleFetch}/>
+        <Character characters={characters} setToggleFetch={setToggleFetch} />
       </Route>
 
-      <Route path="/new"> 
-        <Form characters={characters} setToggleFetch={setToggleFetch}/>
+      <Route path="/new">
+        <Form characters={characters} setToggleFetch={setToggleFetch} />
       </Route>
 
       <Route path="/edit/:id">
-        <Form characters={characters} setToggleFetch={setToggleFetch}/>
+        <Form characters={characters} setToggleFetch={setToggleFetch} />
       </Route>
       <Footer />
     </div>
-  
   );
 }
 

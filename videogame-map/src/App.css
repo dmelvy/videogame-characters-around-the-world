@@ -1,3 +1,4 @@
+@media only screen and (min-width: 768px) {
 body {
   text-align: center;
   background-image: url('https://www.freevector.com/uploads/vector/preview/1857/FreeVector-World-Map-Background.jpg');
@@ -8,7 +9,7 @@ body {
 
 nav {
   position: sticky;
-  background-color: peachpuff;
+  background-color: black;
   padding: 10px;
   color: black;
   display: flex;
@@ -30,6 +31,7 @@ a {
 }
 
 img {
+  padding: 2px;
   display: in-line grid;
   width: 200px;
   height: 200px;
@@ -43,8 +45,15 @@ top: 30%;
 z-index: 100;
 background-color: #fca311;
 color: white;
-display: grid;
+display: flex;
+flex-direction: column;
+width: 300px;
 padding: 0 20px 20px 20px;
+}
+
+button {
+  width: inherit;
+  height: 40px;
 }
 
 .post-edit {
@@ -64,7 +73,12 @@ padding: 0 20px 20px 20px;
 input {
   justify-content: center;
   margin: 5px;
+  padding: 5px;
   font-size: medium;
+}
+
+label {
+  padding: 5px;
 }
 
 .charDetails {
@@ -73,17 +87,20 @@ input {
 }
 
 .footer {
+  position: sticky;
+  bottom: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   background-color: black;
   color: white;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  width: 100%;
+}
 }
 
 @media only screen and (max-width: 600px) {
   body {
+    text-align: center;
     background-image: none;
     background-color: black;
     color: white;
@@ -91,6 +108,9 @@ input {
 
   nav {
     background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   a {
@@ -98,13 +118,51 @@ input {
     color: white;
   }
 
+  header {
+    display: none;
+  }
+
   .search-filter {
     position: sticky;
     top: 0;
     z-index: 9;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
     color: white;
     padding: 0 5px 5px 5px;
+  }
+
+  .check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  input {
+    padding: 10px;
+    justify-content: center;
+    margin: 5px;
+    font-size: 18px;
+  }
+
+  label {
+    font-size: xx-large;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+  }
+
+  span {
+    display: none;
+  }
+
+  button {
+    padding: 7px;
+    border-radius: 5%;
+    font-size: xx-large;
   }
 
   .header {
