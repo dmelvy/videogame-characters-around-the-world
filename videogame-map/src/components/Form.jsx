@@ -65,7 +65,7 @@ function Form(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="post-edit" onSubmit={handleSubmit}>
         <label>Character Name:</label>
         <input value={charName} onChange={(e) => setCharName(e.target.value)} />
         <label>Origin:</label>

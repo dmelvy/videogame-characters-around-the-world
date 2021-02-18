@@ -20,7 +20,7 @@ function Character(props) {
       <h3>{charType.fields.pocLead ? "POC Protagonist" : null}</h3>
       <h3>{charType.fields.femaleLead ? "Female Protagonist" : null}</h3>
       <h3>{charType.fields.lgbtqaLead ? "Queer Protagonist" : null}</h3>
-      <Link to={`/character/${charType.id}`}><button>Edit!</button></Link>
+      <Link to={`/edit/${charType.id}`}><button>Edit!</button></Link>
     </div>
   )
 }

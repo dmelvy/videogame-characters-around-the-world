@@ -47,8 +47,24 @@ display: grid;
 padding: 0 20px 20px 20px;
 }
 
-label {
-  text-align: left;
+.post-edit {
+  background-color: peachpuff;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.post-edit label {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 5px;
+}
+
+input {
+  justify-content: center;
+  margin: 5px;
+  font-size: medium;
 }
 
 .charDetails {

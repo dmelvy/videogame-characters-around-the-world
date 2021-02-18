@@ -87,7 +87,7 @@ function Search(props) {
           value={lgbtqaSearch}
           onChange={(event) => setLgbtqaSearch(event.target.checked)}
         />
-        <label htmlFor="pocLead">Person of Color (POC) Protagonist</label>
+        <label htmlFor="pocLead">POC Protagonist</label>
         <input
           type="checkbox"
           value={pocSearch}
