@@ -3,11 +3,12 @@ import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 import { baseURL, config } from './services';
 import Nav from './components/Nav';
-import Home from './components/Home';
 import './App.css';
 import Character from './components/Character';
 import Form from './components/Form';
 import Search from './components/Search';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -25,10 +26,9 @@ function App() {
     
     <div className="App">
       <Nav />
-      <h1>Videogame Characters Around The World</h1>
+      <Header />
       <Route exact path="/">
         <Search characters={characters} setToggleFetch={setToggleFetch} setCharacters={setCharacters} />
-        <Home characters={characters} setToggleFetch={setToggleFetch} />
       </Route>
 
       <Route path="/character/:id">
@@ -38,6 +38,7 @@ function App() {
       <Route path="/new"> 
         <Form characters={characters} setToggleFetch={setToggleFetch}/>
       </Route>
+      <Footer />
     </div>
   
   );
