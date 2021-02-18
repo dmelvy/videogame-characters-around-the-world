@@ -6,6 +6,13 @@ body {
 
 }
 
+nav {
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 .characters-container {
   position: relative;
   width: 800px;
@@ -22,8 +29,10 @@ img {
   object-position: 50% 0;      
 }
 
-form {
+.search-filter {
 position: fixed;
+top: 30%;
+z-index: 100;
 background-color: #fca311;
 color: white;
 display: grid;
@@ -49,13 +58,29 @@ label {
 @media only screen and (max-width: 600px) {
   body {
     background-image: none;
-    background-color: peachpuff;
+    background-color: black;
+  }
+
+  .search-filter {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: black;
+    color: white;
+    padding: 0 5px 5px 5px;
+  }
+
+  .header {
+    font-size: smaller;
+    color: white;
   }
 
   img {
+    position: relative;
     display: grid;
+    padding: 5px 0px;
     grid-template-columns: 1fr;
-    width: 400px;
+    width: 60vh;
     height: 400px;
     object-fit: cover;
     object-position: 50% 0;      
@@ -63,16 +88,11 @@ label {
 
   .characters-container {
     position: relative;
-    margin: 200px 0px;
+    margin-left: 0px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   
-  form {
-    margin: 0 auto;
-    background-color: black;
-    color: white;
-    padding: 0 5px 5px 5px;
-  }
+ 
 }
 
