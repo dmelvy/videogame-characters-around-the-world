@@ -9,6 +9,7 @@ function Search(props) {
   const [lgbtqaSearch, setLgbtqaSearch] = useState(false);
   const [femaleSearch, setFemaleSearch] = useState(false);
   const [pocSearch, setPocSearch] = useState(false);
+  const [toggleSwitch, setToggleSwitch] = useState(false);
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -16,30 +17,30 @@ function Search(props) {
     const results = props.characters.filter(char => {
       return char.fields.charName.includes(newSearch)
     })
+    // filtering through the API data and creating an array of relevant search results based on charName
     setCharInfo(results);
     setNewSearch('');
     props.setToggleFetch((curr) => !curr);
   }
-
+  // setting up a conditional for if any of the check boxes are selected
   useEffect(() => {
     if (lgbtqaSearch === true) {
-      let results1 = props.characters.filter(char => { 
-        return char.fields.lgbtqaLead.includes(lgbtqaSearch)
+      const results1 = props.characters.filter(char => { 
+        return char.fields.lgbtqaLead
       })
-      setLgbtqaSearch(results1)
-    } else if (femaleSearch === true) {
-       let results2 = props.characters.filter(char => { 
-        return char.fields.pocLead.includes(femaleSearch)
-      })
-      setFemaleSearch(results2)
+      setCharInfo(results1)
     } else if (pocSearch === true) {
-      let results3 = props.characters.filter(char => { 
-        return char.fields.femaleLead.includes(pocSearch)
+       const results2 = props.characters.filter(char => { 
+        return char.fields.pocLead
       })
-      setPocSearch(results3)
+      setCharInfo(results2)
+    } else if (femaleSearch === true) {
+      const results3 = props.characters.filter(char => { 
+        return char.fields.femaleLead
+      })
+      setCharInfo(results3)
     } 
-
-  }, [lgbtqaSearch, femaleSearch, pocSearch])
+  }, [lgbtqaSearch, pocSearch, femaleSearch])
 
   
   return (
@@ -80,6 +81,7 @@ function Search(props) {
         <button type="submit">Find Characters</button>
       </form>
       <div className="characters-container">
+
         {charInfo.length ?
           <div className="characters-container">
             {charInfo.map((character) => (
