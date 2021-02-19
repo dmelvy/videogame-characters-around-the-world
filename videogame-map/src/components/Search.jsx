@@ -5,7 +5,7 @@ function Search(props) {
   const [charInfo, setCharInfo] = useState("");
   const [currentSearch, setCurrentSearch] = useState("");
   const [newSearch, setNewSearch] = useState("");
-  const [gameSearch, setGameSearch] = useState("");
+  const [gameSearch, setGameSearch] = useState("Horizon Zero Dawn");
   const [lgbtqaSearch, setLgbtqaSearch] = useState(false);
   const [femaleSearch, setFemaleSearch] = useState(false);
   const [pocSearch, setPocSearch] = useState(false);
@@ -13,11 +13,22 @@ function Search(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setCurrentSearch(newSearch);
-    const results = props.characters.filter((char) => {
-      return char.fields.charName.includes(newSearch);
-    });
-    setCharInfo(results);
-    setNewSearch("");
+    setGameSearch(gameSearch);
+    // creating conditional to check input values for searching by keyword
+    if (newSearch.length) {
+      const nameResult = props.characters.filter((char) => {
+        return char.fields.charName.includes(newSearch);
+      });
+      setCharInfo(nameResult);
+      setNewSearch("");
+    } else if (gameSearch.length) {
+      const gameResult = props.characters.filter((char) => {
+        return char.fields.game.includes(gameSearch);
+        // APPARENTLY THE API DATABASE CANNOT BE MISSING THIS INFORMATION FOR ANY ENTRIES, OTHERWISE IT WILL NOT WORK
+      });
+      setCharInfo(gameResult);
+      setGameSearch("");
+    }
     // filtering through the API data and creating an array of relevant search results based on charName and game
     props.setToggleFetch((curr) => !curr);
   };
@@ -25,8 +36,11 @@ function Search(props) {
   useEffect(() => {
     if (femaleSearch === true && pocSearch === true && lgbtqaSearch === true) {
       const results7 = props.characters.filter((char) => {
-        return char.fields.femaleLead || char.fields.pocLead
-      || char.fields.lgbtqaLead;
+        return (
+          char.fields.femaleLead ||
+          char.fields.pocLead ||
+          char.fields.lgbtqaLead
+        );
       });
       setCharInfo(results7);
     } else if (femaleSearch === true && lgbtqaSearch === true) {
@@ -76,7 +90,7 @@ function Search(props) {
         />
         <label htmlFor="videogame-keyword">Videogame Title</label>
         <input
-          type="search"
+          type="text"
           placeholder="Type a videogame title."
           value={gameSearch}
           onChange={(event) => setGameSearch(event.target.value)}
