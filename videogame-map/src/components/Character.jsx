@@ -14,13 +14,13 @@ function Character(props) {
   return (
     <div className="charDetails">
       <img src={charType.fields.charImage} />
-      <h1>{charType.fields.charName}</h1>
-      <h3>{charType.fields.origin}</h3>
-      <h3>{charType.fields.game}</h3>
-      <h3>{charType.fields.genre}</h3>
-      <h3>{charType.fields.pocLead ? "POC Protagonist" : null}</h3>
-      <h3>{charType.fields.femaleLead ? "Female Protagonist" : null}</h3>
-      <h3>{charType.fields.lgbtqaLead ? "Queer Protagonist" : null}</h3>
+      <h1>Name: {charType.fields.charName}</h1>
+      <h3>Lives in: {charType.fields.origin}</h3>
+      <h3>From videogame: {charType.fields.game}</h3>
+      <h3>Game genre: {charType.fields.genre}</h3>
+      <h3>{charType.fields.pocLead ? `Can play as POC` : null}</h3>
+      <h3>{charType.fields.femaleLead ? "Can play as female" : null}</h3>
+      <h3>{charType.fields.lgbtqaLead ? "Can play as LGBTQA" : null}</h3>
       <Link to={`/edit/${charType.id}`}>
         <button>Edit!</button>
       </Link>
