@@ -3,10 +3,12 @@
     height: 100vh;
     position: relative;
     text-align: center;
-    background-image: url("https://tinyurl.com/iy60uw0v");
-    background-size: 100vh;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url("https://art.pixilart.com/7d3a0fef2fdf813.gif");
+    background-size: 20vh;
+    background-position-x: 120px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-color: #03a9f4;
     font-family: "Major Mono Display", monospace;
   }
 
@@ -57,7 +59,7 @@
     position: fixed;
     top: 30%;
     z-index: 100;
-    background-color: #03a8f468;
+    background-color: rgba(231, 235, 254, 0.76);
     color: rgb(33, 33, 33);
     display: flex;
     flex-direction: column;
@@ -68,6 +70,8 @@
   .search-filter button {
     background-color: #03a9f4;
     color: white;
+    font-weight: bolder;
+    font-size: 16px;
   }
 
   .check {
@@ -85,11 +89,13 @@
     font-family: "Major Mono Display", monospace;
     width: inherit;
     height: 40px;
+    font-weight: bolder;
+    font-size: 16px;
   }
 
   .post-edit {
     border: 5px solid black;
-    background-color: #03a8f468;
+    background-color: rgba(231, 235, 254, 0.76);
     color: rgb(33, 33, 33);
     width: 300px;
     margin: 0 auto;
@@ -122,6 +128,13 @@
   .charDetails {
     display: in-line grid;
     grid-template-columns: 1fr 1fr 1fr;
+    border: 5px solid black;
+    background-color: rgba(231, 235, 254, 0.76);
+    color: rgb(33, 33, 33);
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 50px;
   }
 
   .footer {
@@ -229,7 +242,7 @@
 
   button {
     padding: 7px 0px 15px 0px;
-    border-radius: 10%;
+    border-radius: 6%;
     font-size: 25px;
     background-color: white;
     font-family: "Major Mono Display", monospace;
@@ -261,6 +274,7 @@
 
   .charDetails {
     background-color: black;
+    padding: 5px 0px 50px 0px;
   }
 
   .footer,
@@ -268,7 +282,8 @@
     color: #02F29E;
     font-size: 20px;
     background-color: black;
-    height: 5vh;
+    height: 7vh;
+    padding: 10px;
     position: sticky;
     bottom: 0;
   }
