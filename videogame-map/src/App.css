@@ -12,23 +12,24 @@
 
   nav {
     position: sticky;
-    background-color: black;
+    background-color: #02F29E;
     padding: 10px;
-    color: black;
+    color: rgb(33, 33, 33);
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   a {
     text-decoration: none;
-    color: white;
+    padding: 0 5px;
+    color: rgb(33, 33, 33);
   }
 
   .characters-container {
     position: relative;
     width: 800px;
-    margin: 0 200px;
+    margin: 72px 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* the next few lines help keep the footer stuck on the bottom */
@@ -50,14 +51,19 @@
   .search-filter {
     border: 5px solid black;
     position: fixed;
-    top: 20%;
+    top: 30%;
     z-index: 100;
-    background-color: #6ac0e2;
-    color: white;
+    background-color: #03a8f468;
+    color: rgb(33, 33, 33);
     display: flex;
     flex-direction: column;
     width: 380px;
     padding: 0 20px 20px 20px;
+  }
+
+  .search-filter button {
+    background-color: #03a9f4;
+    color: white;
   }
 
   .check {
@@ -92,6 +98,11 @@
     margin: 5px;
   }
 
+  .post-edit button {
+    background-color: #03a9f4;
+    color: white;
+  }
+
   input {
     justify-content: center;
     margin: 5px;
@@ -115,8 +126,12 @@
     flex-flow: row wrap;
     justify-content: center;
     background-color: black;
-    color: white;
+    color: #02F29E;
     width: 100%;
+  }
+
+  .footer a {
+    color: #02F29E;
   }
 }
 
@@ -140,12 +155,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 5px;
   }
 
   a {
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    color: #02F29E;
+    font-size: 20px;
   }
 
   .header {
@@ -162,7 +178,7 @@
   }
 
   #hfilter {
-    display: none;
+    font-size: 23px;
   }
 
   .search-filter {
@@ -174,7 +190,12 @@
     flex-direction: column;
     max-width: 100%;
     color: white;
-    padding: 0 5px 5px 5px;
+    padding: 10px 5px 5px 5px;
+  }
+
+  .search-filter button {
+    background-color: white;
+    font-family: "Major Mono Display", monospace;
   }
 
   .check {
@@ -208,11 +229,6 @@
     font-size: xx-large;
   }
 
-  .header {
-    font-size: smaller;
-    color: white;
-  }
-
   img {
     position: relative;
     display: grid;
@@ -225,14 +241,20 @@
   }
 
   .characters-container {
+    background-color: black;
     position: relative;
     margin-left: 0px;
     display: grid;
     grid-template-columns: 1fr;
   }
 
+  .charDetails {
+    background-color: black;
+  }
+
+  .footer,
   .footer a {
-    text-decoration: lightcoral;
-    font-size: 14px;
+    color: #02F29E;
+    font-size: 15px;
   }
 }
