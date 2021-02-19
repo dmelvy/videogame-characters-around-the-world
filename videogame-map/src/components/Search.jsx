@@ -21,9 +21,30 @@ function Search(props) {
     // filtering through the API data and creating an array of relevant search results based on charName and game
     props.setToggleFetch((curr) => !curr);
   };
-  // setting up a conditional for if any of the check boxes are selected
+  // setting up a conditional for if any of the check boxes are selected, MUST go in order from all filters checked to only two filters checked to just one single filter box checked
   useEffect(() => {
-    if (lgbtqaSearch === true) {
+    if (femaleSearch === true && pocSearch === true && lgbtqaSearch === true) {
+      const results7 = props.characters.filter((char) => {
+        return char.fields.femaleLead || char.fields.pocLead
+      || char.fields.lgbtqaLead;
+      });
+      setCharInfo(results7);
+    } else if (femaleSearch === true && lgbtqaSearch === true) {
+      const results4 = props.characters.filter((char) => {
+        return char.fields.femaleLead || char.fields.lgbtqaLead;
+      });
+      setCharInfo(results4);
+    } else if (femaleSearch === true && pocSearch === true) {
+      const results5 = props.characters.filter((char) => {
+        return char.fields.femaleLead || char.fields.pocLead;
+      });
+      setCharInfo(results5);
+    } else if (pocSearch === true && lgbtqaSearch === true) {
+      const results6 = props.characters.filter((char) => {
+        return char.fields.lgbtqaLead || char.fields.pocLead;
+      });
+      setCharInfo(results6);
+    } else if (lgbtqaSearch === true) {
       const results1 = props.characters.filter((char) => {
         return char.fields.lgbtqaLead;
       });
