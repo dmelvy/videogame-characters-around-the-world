@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="footer">
       <h4>
-        Project by Daphne Melvin 🙋🏻‍♀️
+        <span>Project by </span>D<span>aphne</span> Melvin 🙋🏻‍♀️
         <a href="http://www.github.com/dmelvy" target="_blank">
           Github 🕹
         </a>
