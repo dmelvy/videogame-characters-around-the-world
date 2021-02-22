@@ -17,13 +17,17 @@ function Search(props) {
     // creating conditional to check input values for searching by keyword
     if (newSearch.length) {
       const nameResult = props.characters.filter((char) => {
-        return char.fields.charName.toLowerCase().includes(newSearch.toLowerCase());
+        return char.fields.charName
+          .toLowerCase()
+          .includes(newSearch.toLowerCase());
       });
       setCharInfo(nameResult);
       setNewSearch("");
     } else if (gameSearch.length) {
       const gameResult = props.characters.filter((char) => {
-        return char.fields.game.toLowerCase().includes(gameSearch.toLowerCase());
+        return char.fields.game
+          .toLowerCase()
+          .includes(gameSearch.toLowerCase());
         // APPARENTLY THE API DATABASE CANNOT BE MISSING THIS INFORMATION FOR ANY ENTRIES, OTHERWISE IT WILL NOT WORK
       });
       setCharInfo(gameResult);

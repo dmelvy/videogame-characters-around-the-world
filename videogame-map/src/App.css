@@ -14,7 +14,7 @@
 
   nav {
     position: sticky;
-    background-color: #02F29E;
+    background-color: #02f29e;
     padding: 10px;
     color: rgb(33, 33, 33);
     display: flex;
@@ -144,19 +144,19 @@
     flex-flow: row wrap;
     justify-content: center;
     background-color: black;
-    color: #02F29E;
+    color: #02f29e;
     width: 100%;
   }
 
   .footer a {
-    color: #02F29E;
+    color: #02f29e;
   }
 }
 
 @media only screen and (max-width: 480px) {
   body {
     text-align: center;
-    background-image: url('https://art.pixilart.com/7d3a0fef2fdf813.gif');
+    background-image: url("https://art.pixilart.com/7d3a0fef2fdf813.gif");
     background-size: 50vh;
     background-position: top center;
     background-repeat: no-repeat;
@@ -180,7 +180,7 @@
 
   a {
     text-decoration: none;
-    color: #02F29E;
+    color: #02f29e;
     font-size: 25px;
   }
 
@@ -210,14 +210,14 @@
   }
 
   .search-filter button {
-    background-color: #02F29E;
+    background-color: #02f29e;
     font-family: "Major Mono Display", monospace;
   }
 
   .check {
-    display: flex; 
+    display: flex;
     flex-direction: row;
-    width: 70%; 
+    width: 70%;
     margin: auto;
     justify-content: center;
     padding: 1px 0px 15px 0px;
@@ -269,7 +269,7 @@
   }
 
   .charDetails h1 {
-    color: #02F29E;
+    color: #02f29e;
   }
 
   .charDetails {
@@ -279,7 +279,7 @@
 
   .footer,
   .footer a {
-    color: #02F29E;
+    color: #02f29e;
     font-size: 20px;
     background-color: black;
     height: 7vh;

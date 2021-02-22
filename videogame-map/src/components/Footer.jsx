@@ -9,7 +9,7 @@ function Footer() {
           Github 🕹
         </a>
         <a href="http://www.linkedin.com/in/daphnemelvin" target="_blank">
-          LinkedIn 
+          LinkedIn
         </a>
       </h4>
     </div>

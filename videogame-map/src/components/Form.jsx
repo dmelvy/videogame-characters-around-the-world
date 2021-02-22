@@ -67,13 +67,9 @@ function Form(props) {
     <div>
       <form className="post-edit" onSubmit={handleSubmit}>
         <label>Character Name:</label>
-        <input
-          value={charName}
-          onChange={(e) => setCharName(e.target.value)} />
+        <input value={charName} onChange={(e) => setCharName(e.target.value)} />
         <label>Origin:</label>
-        <input
-          value={origin}
-          onChange={(e) => setOrigin(e.target.value)} />
+        <input value={origin} onChange={(e) => setOrigin(e.target.value)} />
         <label>Character Picture:</label>
         <input
           type="url"
@@ -81,9 +77,7 @@ function Form(props) {
           onChange={(e) => setCharImage(e.target.value)}
         />
         <label>Game:</label>
-        <input
-          value={game}
-          onChange={(e) => setGame(e.target.value)} />
+        <input value={game} onChange={(e) => setGame(e.target.value)} />
         <label>Videogame Picture:</label>
         <input
           type="url"
