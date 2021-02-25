@@ -276,6 +276,12 @@ body {
     padding: 5px 0px 50px 0px;
   }
 
+  .charDetails img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
   .footer,
   .footer a {
     color: #02f29e;
