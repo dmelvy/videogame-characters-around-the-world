@@ -201,12 +201,13 @@ body {
     top: 0;
     z-index: 9;
     background-color: black;
-    max-width: 100%;
+    width: 100%;
     color: white;
     padding: 0.5px 5px 5px 5px;
   }
 
   .search-filter button {
+    margin: 0 auto;
     background-color: #02f29e;
     font-family: "Major Mono Display", monospace;
   }
@@ -216,11 +217,11 @@ body {
     flex-direction: row;
     width: 70%;
     margin: auto;
-    justify-content: center;
     padding: 1px 0px 15px 0px;
   }
 
   input {
+    margin: 0 auto;
     padding: 10px;
     width: 70%;
     justify-content: center;
@@ -251,8 +252,8 @@ body {
     display: grid;
     padding: 5px 0px;
     grid-template-columns: 1fr;
-    width: 60vh;
-    height: 400px;
+    width: 50vh;
+    height: 300px;
     object-fit: cover;
     object-position: 50% 0;
   }
