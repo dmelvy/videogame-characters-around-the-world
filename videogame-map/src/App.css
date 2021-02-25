@@ -252,8 +252,8 @@ body {
     display: grid;
     padding: 5px 0px;
     grid-template-columns: 1fr;
-    width: 50vh;
-    height: 300px;
+    width: 60vh;
+    height: 400px;
     object-fit: cover;
     object-position: 50% 0;
   }
